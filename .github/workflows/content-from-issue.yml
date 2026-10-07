@@ -23,10 +23,11 @@ jobs:
       contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.issue.author_association)
     runs-on: ubuntu-latest
     env:
-      OUT: ${{ runner.temp }}/content
       GH_TOKEN: ${{ github.token }}
       ISSUE: ${{ github.event.issue.number }}
     steps:
+      # runner コンテキストはジョブの env では使えないため、ここで設定する
+      - run: echo "OUT=$RUNNER_TEMP/content" >> "$GITHUB_ENV"
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
@@ -46,6 +47,7 @@ jobs:
       - name: Validate and build
         if: steps.generate.outputs.kind != 'none'
         run: |
+          set -o pipefail
           npm run validate 2>&1 | tee "$OUT/validate.log"
           npm run build
 

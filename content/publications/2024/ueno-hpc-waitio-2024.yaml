@@ -1,0 +1,13 @@
+title: WaitIO+MPI Hybridによる異種システム間でのAllreduceの高速化
+authors:
+  - 植野貴大
+  - 住元真司
+  - 中島研吾
+  - 片桐孝洋
+  - 大島聡史
+  - 星野哲也
+  - 河合直聡
+  - 永井亨
+venue: 情報処理学会研究報告HPC
+year: 2024
+category: domestic

@@ -1,0 +1,47 @@
+name: ニュースを追加
+description: 受賞・イベント・メディア掲載などのニュースをサイトに追加します。
+title: "[ニュース] "
+labels: ["content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        送信すると、サイトを更新する Pull Request が自動で作られます（1〜2分）。PR がマージされるとサイトに反映されます。
+
+        論文・発表の告知だけなら、「論文・発表を追加」フォームの「トップの『最新情報』にも載せる」にチェックを入れれば、このフォームは不要です。
+  - type: dropdown
+    attributes:
+      label: ニュースの種類
+      options:
+        - 受賞
+        - イベント
+        - セミナー
+        - ワークショップ
+        - プロジェクト
+        - メディア
+        - 発表
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: 日付
+      placeholder: "2026-10-06"
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: タイトル
+      placeholder: 〇〇さんが情報処理学会第88回全国大会で学生奨励賞を受賞
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 本文
+      description: 受賞対象の発表、イベントの日時・場所など。
+  - type: input
+    attributes:
+      label: 関連 URL
+  - type: textarea
+    attributes:
+      label: 画像
+      description: 写真などがあれば、ここにドラッグ＆ドロップで添付してください（1枚）。

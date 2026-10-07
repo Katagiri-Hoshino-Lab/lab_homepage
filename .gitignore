@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vite cache
+.vite/
+
+# Build artifact archives (配信パッケージは追跡する)
+# *.tgz
+
+
+# Build output
+dist/
+
+# Source archives
+*.zip

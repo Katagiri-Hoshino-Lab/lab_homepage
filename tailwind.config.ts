@@ -12,9 +12,9 @@ export default {
           700: '#1d2925',
           600: '#2c3a35',
         },
-        paper: '#f6f5f0',
-        line: '#e2e0d8',
-        muted: '#5a635f',
+        paper: '#f5f6f5',
+        line: '#dcdfdc',
+        muted: '#5c6360',
         nu: {
           50: '#eef8f2',
           100: '#d6efe0',
@@ -27,14 +27,20 @@ export default {
           800: '#00472a',
           900: '#003620',
         },
-        signal: '#4fe3a0',
       },
       fontFamily: {
         sans: ['"Noto Sans JP"', 'system-ui', '-apple-system', '"Segoe UI"', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       maxWidth: {
-        site: '76rem',
+        site: '72rem',
+      },
+      // 角丸は控えめにする（丸いアバターなどは rounded-full を使う）
+      borderRadius: {
+        sm: '2px',
+        DEFAULT: '2px',
+        md: '3px',
+        lg: '3px',
+        xl: '4px',
       },
     },
   },

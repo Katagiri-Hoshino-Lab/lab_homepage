@@ -7,17 +7,22 @@ export const siteMeta = {
   language: 'ja',
 };
 
+/** href が http で始まる項目は外部リンクとして新しいタブで開く */
 export type NavItem = { label: string; labelEn: string; href: string };
 
 export const navigation: NavItem[] = [
+  { label: 'TOP', labelEn: 'Home', href: '/' },
+  { label: 'ニュース', labelEn: 'News', href: '/news' },
   { label: '研究室概要', labelEn: 'About', href: '/about' },
   { label: '研究紹介', labelEn: 'Research', href: '/research' },
   { label: '研究発表', labelEn: 'Publications', href: '/publications' },
   { label: 'プロジェクト', labelEn: 'Projects', href: '/projects' },
   { label: 'メンバー', labelEn: 'Members', href: '/members' },
-  { label: 'ニュース', labelEn: 'News', href: '/news' },
   { label: 'アクセス', labelEn: 'Access', href: '/access' },
+  { label: 'ブログ', labelEn: 'Blog', href: 'https://zenn.dev/p/katalab' },
 ];
+
+export const isExternal = (href: string) => /^https?:\/\//.test(href);
 
 export const externalLinks = [
   { label: '研究室ブログ (Zenn)', href: 'https://zenn.dev/p/katalab' },
@@ -33,25 +38,6 @@ export const heroContent = {
     '高性能計算（HPC）分野における、生成AIによるコード自動生成、自動チューニング、混合精度計算、大規模シミュレーションを柱に、',
   description:
     '名古屋大学情報基盤センターを拠点として最先端スーパーコンピュータの性能を最大限に引き出す計算科学とコンピュータサイエンスの研究を推進しています。',
-  ctas: [
-    { label: '研究紹介を見る', href: '/research', variant: 'primary' },
-    { label: '論文リストを見る', href: '/publications', variant: 'secondary' },
-    { label: 'メンバーを見る', href: '/members', variant: 'ghost' },
-  ],
-  links: [
-    // 実URLが確定したら href を設定する
-    // { label: '研究室紹介スライド', href: 'https://www.docswell.com/...' },
-    // { label: '研究室ブログ', href: 'https://zenn.dev/...' },
-  ] as { label: string; href: string }[],
-};
-
-export const homeSections = {
-  researchSummaryTitle: '研究領域',
-  featuredNewsTitle: '最新情報',
-  featuredProjectsTitle: '進行中プロジェクト',
-  featuredPublicationsTitle: '代表的な論文・発表',
-  membersPreviewTitle: '研究室メンバー',
-  accessTitle: 'アクセス',
 };
 
 export const aboutContent = {

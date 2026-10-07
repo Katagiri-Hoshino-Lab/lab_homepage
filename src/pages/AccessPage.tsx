@@ -10,7 +10,7 @@ export default function AccessPage() {
 
   return (
     <>
-      <PageHeader eyebrow="Access" title="アクセス" lead={`${accessInfo.organization} ${accessInfo.floor}`} />
+      <PageHeader title="アクセス" lead={`${accessInfo.organization} ${accessInfo.floor}`} />
 
       <div className="container-site space-y-14 py-14 sm:py-20">
         <section className="grid gap-8 lg:grid-cols-2">
@@ -21,8 +21,7 @@ export default function AccessPage() {
             className="aspect-[4/3] w-full rounded-lg border border-line object-cover"
           />
           <div className="flex flex-col">
-            <p className="eyebrow text-nu-600">Address</p>
-            <h2 className="mt-2 text-2xl font-bold">{accessInfo.labName}</h2>
+            <h2 className="text-xl font-bold sm:text-2xl">{accessInfo.labName}</h2>
             <p className="mt-4 flex gap-2 leading-relaxed">
               <PinIcon className="mt-1.5 h-4 w-4 shrink-0 text-nu-600" />
               <span>
@@ -40,7 +39,7 @@ export default function AccessPage() {
                 href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-md bg-ink px-4 py-2.5 font-medium text-white hover:bg-ink-700"
+                className="inline-flex items-center gap-1.5 bg-nu-700 px-4 py-2.5 font-medium text-white hover:bg-nu-800"
               >
                 Google Maps で開く
                 <ArrowUpRight />
@@ -59,8 +58,7 @@ export default function AccessPage() {
         </section>
 
         <section>
-          <p className="eyebrow text-nu-600">Routes</p>
-          <h2 className="mt-2 text-2xl font-bold">交通アクセス</h2>
+          <h2 className="border-b-2 border-ink pb-2 text-xl font-bold sm:text-2xl">交通アクセス</h2>
           <div className="mt-6 grid gap-5 md:grid-cols-2">
             {accessInfo.routes.map((r) => (
               <div key={r.from} className="card p-6">

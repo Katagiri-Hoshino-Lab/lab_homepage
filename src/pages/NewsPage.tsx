@@ -22,7 +22,7 @@ export default function NewsPage() {
 
   return (
     <>
-      <PageHeader eyebrow="News" title="ニュース" lead="受賞、イベント、プロジェクトなど研究室の最新情報をお知らせします。" />
+      <PageHeader title="ニュース" lead="受賞、イベント、プロジェクトなど研究室の最新情報をお知らせします。" />
 
       <div className="container-site py-12 sm:py-16">
         <div className="flex flex-wrap gap-2" role="group" aria-label="カテゴリで絞り込み">
@@ -34,8 +34,8 @@ export default function NewsPage() {
                 type="button"
                 aria-pressed={active}
                 onClick={() => setCategory(c)}
-                className={`rounded-full border px-3 py-1 text-xs transition-colors ${
-                  active ? 'border-ink bg-ink text-white' : 'border-line bg-white text-muted hover:border-ink/40 hover:text-ink'
+                className={`border px-3 py-1 text-xs ${
+                  active ? 'border-nu-700 bg-nu-700 text-white' : 'border-line bg-white text-muted hover:border-ink/40 hover:text-ink'
                 }`}
               >
                 {c === 'all' ? 'すべて' : newsCategoryLabel[c]}
@@ -46,7 +46,7 @@ export default function NewsPage() {
 
         {grouped.map((g) => (
           <section key={g.year} className="mt-10">
-            <h2 className="border-b border-line pb-3 font-mono text-2xl font-medium">{g.year}</h2>
+            <h2 className="border-b border-line pb-3 tabular-nums text-2xl font-medium">{g.year}</h2>
             <div className="divide-y divide-line">
               {g.items.map((n) => (
                 <NewsEntry key={n.id} item={n} />

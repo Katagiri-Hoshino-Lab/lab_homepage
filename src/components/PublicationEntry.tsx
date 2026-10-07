@@ -26,8 +26,8 @@ export default function PublicationEntry({ publication: p, showYear }: Props) {
   return (
     <article className="grid gap-2 py-5 sm:grid-cols-[7.5rem_1fr] sm:gap-6">
       <div className="flex items-center gap-2 sm:flex-col sm:items-start sm:gap-1">
-        {showYear && <span className="font-mono text-sm text-muted">{p.year}</span>}
-        <span className="eyebrow text-nu-600">{publicationCategoryLabel[p.category]}</span>
+        {showYear && <span className="tabular-nums text-sm text-muted">{p.year}</span>}
+        <span className="text-xs text-nu-700">{publicationCategoryLabel[p.category]}</span>
       </div>
       <div>
         <h3 className="font-medium leading-snug text-ink">{p.title}</h3>
@@ -44,7 +44,7 @@ export default function PublicationEntry({ publication: p, showYear }: Props) {
                 href={l.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 rounded border border-line bg-white px-2 py-0.5 font-mono text-xs text-nu-700 transition-colors hover:border-nu-400"
+                className="inline-flex items-center gap-1 border border-line bg-white px-2 py-0.5 text-xs text-nu-700 hover:border-nu-600"
               >
                 {l.label}
                 <ArrowUpRight className="h-3 w-3" />

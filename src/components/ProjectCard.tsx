@@ -8,16 +8,11 @@ export default function ProjectCard({ project: p }: { project: Project }) {
   return (
     <article className="card flex h-full flex-col p-5 sm:p-6">
       <div className="flex flex-wrap items-center gap-2">
-        <span
-          className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium ${
-            ongoing ? 'bg-nu-50 text-nu-700' : 'bg-paper text-muted'
-          }`}
-        >
-          <span className={`h-1.5 w-1.5 rounded-full ${ongoing ? 'bg-nu-500' : 'bg-muted/50'}`} />
+        <span className={`border px-2 py-0.5 text-xs ${ongoing ? 'border-nu-600 text-nu-700' : 'border-line text-muted'}`}>
           {ongoing ? '進行中' : '終了'}
         </span>
         <span className="chip">{p.category}</span>
-        <span className="ml-auto font-mono text-xs text-muted">{period}</span>
+        <span className="ml-auto tabular-nums text-xs text-muted">{period}</span>
       </div>
 
       <h3 className="mt-4 font-bold leading-snug text-ink">

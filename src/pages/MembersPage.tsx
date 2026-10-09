@@ -33,11 +33,12 @@ export default function MembersPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Members"
         title="メンバー"
         lead={`教員・招へい教員 ${faculty.length} 名、学生 ${students.length} 名が在籍しています。これまでに ${alumniCount} 名が研究室を巣立っていきました。`}
       />
 
-      <nav aria-label="ページ内" className="sticky top-16 z-20 border-b border-line bg-white ">
+      <nav aria-label="ページ内" className="sticky top-16 z-20 border-b border-line bg-paper/95 backdrop-blur">
         <ul className="container-site scrollbar-none flex gap-6 overflow-x-auto text-sm">
           {sections.map((s) => (
             <li key={s.id} className="shrink-0">
@@ -63,7 +64,7 @@ export default function MembersPage() {
         </button>
 
         <section id="faculty" className="scroll-mt-32">
-          <SectionTitle title="教員" />
+          <SectionTitle eyebrow="Faculty" title="教員" />
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {faculty.map((m) => (
               <MemberCard key={m.id} member={m} large />
@@ -79,11 +80,11 @@ export default function MembersPage() {
         </section>
 
         <section id="students" className="scroll-mt-32">
-          <SectionTitle title="学生" />
+          <SectionTitle eyebrow="Students" title="学生" />
           <div className="space-y-8">
             {studentGrades.map((g) => (
               <div key={g.grade} className="grid gap-4 lg:grid-cols-[6rem_1fr]">
-                <h3 className="tabular-nums text-xl font-medium text-nu-600">{g.grade}</h3>
+                <h3 className="font-mono text-xl font-medium text-nu-600">{g.grade}</h3>
                 <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
                   {g.members.map((m) => (
                     <MemberCard key={m.id} member={m} />
@@ -95,17 +96,17 @@ export default function MembersPage() {
         </section>
 
         <section id="contact" className="scroll-mt-32">
-          <SectionTitle title="メールアドレスについて" />
+          <SectionTitle eyebrow="Contact" title="メールアドレスについて" />
           <div className="card grid gap-4 p-6 text-sm sm:grid-cols-2">
             <div>
               <p className="font-bold">教員</p>
-              <p className="mt-1 tabular-nums text-muted">
+              <p className="mt-1 font-mono text-muted">
                 &lt;アカウント名&gt;<span className="text-ink">{emailDomainRules.staff_cc}</span>
               </p>
             </div>
             <div>
               <p className="font-bold">学生</p>
-              <p className="mt-1 tabular-nums text-muted">
+              <p className="mt-1 font-mono text-muted">
                 &lt;アカウント名&gt;<span className="text-ink">{emailDomainRules.student_hpc}</span>
               </p>
             </div>
@@ -114,15 +115,15 @@ export default function MembersPage() {
         </section>
 
         <section id="alumni" className="scroll-mt-32">
-          <SectionTitle title="卒業生" />
+          <SectionTitle eyebrow="Alumni" title="卒業生" />
           <div className="divide-y divide-line border-y border-line">
             {alumniByYear.map((g) => (
               <div key={g.fiscalYear} className="grid gap-2 py-4 sm:grid-cols-[8rem_1fr]">
-                <p className="tabular-nums text-sm text-muted">{g.fiscalYear}年度</p>
+                <p className="font-mono text-sm text-muted">{g.fiscalYear}年度</p>
                 <ul className="flex flex-wrap gap-x-6 gap-y-1.5 text-sm">
                   {g.members.map((m) => (
                     <li key={m.nameJa}>
-                      <span className="mr-1.5 tabular-nums text-xs text-nu-600">{m.role}</span>
+                      <span className="mr-1.5 font-mono text-xs text-nu-600">{m.role}</span>
                       {m.nameJa}
                     </li>
                   ))}
@@ -134,7 +135,7 @@ export default function MembersPage() {
           <h3 className="mt-12 text-lg font-bold">主な進路</h3>
           <div className="mt-4 grid gap-6 md:grid-cols-[2fr_1fr]">
             <div>
-              <p className="mb-3 text-sm font-bold text-muted">企業</p>
+              <p className="eyebrow mb-3 text-muted">Companies</p>
               <ul className="flex flex-wrap gap-2">
                 {alumniCareerSummary.companies.map((c) => (
                   <li key={c} className="chip bg-white">{c}</li>
@@ -143,13 +144,13 @@ export default function MembersPage() {
             </div>
             <div className="space-y-6">
               <div>
-                <p className="mb-3 text-sm font-bold text-muted">大学院</p>
+                <p className="eyebrow mb-3 text-muted">Graduate schools</p>
                 <ul className="space-y-1.5 text-sm">
                   {alumniCareerSummary.graduateSchools.map((c) => <li key={c}>{c}</li>)}
                 </ul>
               </div>
               <div>
-                <p className="mb-3 text-sm font-bold text-muted">大学</p>
+                <p className="eyebrow mb-3 text-muted">Universities</p>
                 <ul className="space-y-1.5 text-sm">
                   {alumniCareerSummary.universities.map((c) => <li key={c}>{c}</li>)}
                 </ul>
@@ -159,13 +160,13 @@ export default function MembersPage() {
         </section>
 
         <section id="former-staff" className="scroll-mt-32">
-          <SectionTitle title="過去のスタッフ" />
+          <SectionTitle eyebrow="Former staff" title="過去のスタッフ" />
           <ul className="divide-y divide-line border-y border-line">
             {formerStaff.map((s) => (
               <li key={s.nameEn + s.role} className="grid gap-1 py-4 sm:grid-cols-[14rem_1fr] sm:gap-6">
                 <div>
                   <p className="font-bold">{s.nameJa}</p>
-                  <p className="tabular-nums text-xs text-muted">{s.nameEn}</p>
+                  <p className="font-mono text-xs text-muted">{s.nameEn}</p>
                 </div>
                 <div className="text-sm">
                   <p>{s.role}</p>
@@ -177,7 +178,7 @@ export default function MembersPage() {
         </section>
 
         <section id="photos" className="scroll-mt-32">
-          <SectionTitle title="歴代の集合写真" />
+          <SectionTitle eyebrow="Gallery" title="歴代の集合写真" />
           <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {pastPhotos.map((p) => (
               <li key={p.fiscalYear}>
@@ -191,10 +192,10 @@ export default function MembersPage() {
                       src={p.image}
                       alt={`${p.fiscalYear}年度 集合写真`}
                       loading="lazy"
-                      className="h-full w-full object-cover "
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </span>
-                  <span className="block px-3 py-2 tabular-nums text-xs text-muted">{p.fiscalYear}</span>
+                  <span className="block px-3 py-2 font-mono text-xs text-muted">{p.fiscalYear}</span>
                 </button>
               </li>
             ))}
@@ -207,9 +208,12 @@ export default function MembersPage() {
   )
 }
 
-function SectionTitle({ title }: { title: string }) {
+function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
-    <h2 className="mb-6 border-b-2 border-ink pb-2 text-xl font-bold sm:text-2xl">{title}</h2>
+    <div className="mb-6">
+      <p className="eyebrow text-nu-600">{eyebrow}</p>
+      <h2 className="mt-1 text-2xl font-bold tracking-tight">{title}</h2>
+    </div>
   )
 }
 
@@ -233,7 +237,7 @@ function Lightbox({ photo, onClose }: { photo: GroupPhoto | null; onClose: () =>
       {photo && (
         <figure className="relative">
           <img src={photo.image} alt={`${photo.fiscalYear}年度 集合写真`} className="max-h-[85vh] w-full rounded object-contain" />
-          <figcaption className="mt-2 text-center tabular-nums text-sm text-white/80">{photo.fiscalYear}年度</figcaption>
+          <figcaption className="mt-2 text-center font-mono text-sm text-white/80">{photo.fiscalYear}年度</figcaption>
           <button
             type="button"
             onClick={onClose}

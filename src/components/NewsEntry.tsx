@@ -21,10 +21,10 @@ export default function NewsEntry({ item, compact }: Props) {
   return (
     <article className="grid gap-2 py-5 sm:grid-cols-[7.5rem_1fr] sm:gap-6">
       <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-1">
-        <time dateTime={item.date} className="tabular-nums text-sm text-muted">
+        <time dateTime={item.date} className="font-mono text-sm text-muted">
           {formatDate(item.date)}
         </time>
-        <span className="border border-nu-600 px-1.5 text-xs leading-5 text-nu-700">{newsCategoryLabel[item.category]}</span>
+        <span className="eyebrow text-nu-600">{newsCategoryLabel[item.category]}</span>
       </div>
       <div className="flex gap-5">
         <div className="min-w-0 flex-1">

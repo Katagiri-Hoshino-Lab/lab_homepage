@@ -31,9 +31,9 @@ export default function MemberCard({ member, large }: { member: Member; large?: 
     <article className={`card flex items-center gap-4 ${large ? 'p-5 sm:p-6' : 'p-4'}`}>
       <MemberAvatar member={member} className={large ? 'h-20 w-20 sm:h-24 sm:w-24' : 'h-14 w-14'} />
       <div className="min-w-0">
-        <p className="text-xs text-muted">{member.role}</p>
+        <p className="eyebrow text-nu-600">{member.role}</p>
         <h3 className={`font-bold text-ink ${large ? 'mt-1 text-lg' : 'text-base'}`}>{member.nameJa}</h3>
-        <p className="tabular-nums text-xs text-muted">{member.nameEn}</p>
+        <p className="font-mono text-xs text-muted">{member.nameEn}</p>
         {(email || member.url) && (
           <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">
             {email && (

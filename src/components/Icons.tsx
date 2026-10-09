@@ -10,6 +10,10 @@ const base = {
   'aria-hidden': true,
 }
 
+export const ArrowRight = ({ className = 'h-4 w-4' }: IconProps) => (
+  <svg {...base} className={className}><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+)
+
 export const ArrowUpRight = ({ className = 'h-3.5 w-3.5' }: IconProps) => (
   <svg {...base} className={className}><path d="M7 17 17 7M8 7h9v9" /></svg>
 )

@@ -15,6 +15,7 @@ export default function ResearchPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Research"
         title="研究紹介"
         lead="生成AIによるコード自動生成から自動チューニング、高精度数値計算、大規模シミュレーション、計算機システムの運用まで、スーパーコンピュータの性能を引き出すための研究を幅広く行っています。"
       />
@@ -26,8 +27,9 @@ export default function ResearchPage() {
               <li key={t.id}>
                 <Link
                   to={`/research#${t.id}`}
-                  className="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-muted hover:border-nu-500 hover:text-ink"
+                  className="-ml-px block border-l-2 border-transparent py-1.5 pl-4 text-sm text-muted transition-colors hover:border-nu-500 hover:text-ink"
                 >
+                  <span className="mr-2 font-mono text-xs text-nu-600">{String(i + 1).padStart(2, '0')}</span>
                   {t.title}
                 </Link>
               </li>
@@ -42,10 +44,11 @@ export default function ResearchPage() {
 
             return (
               <section key={t.id} id={t.id} className="scroll-mt-24">
-                <h2 className="border-b-2 border-ink pb-2 text-xl font-bold sm:text-2xl">{t.title}</h2>
+                <p className="font-mono text-sm text-nu-600">{String(i + 1).padStart(2, '0')}</p>
+                <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">{t.title}</h2>
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {t.keywords.map((k) => (
-                    <span key={k} className="chip">
+                    <span key={k} className="rounded-full bg-nu-50 px-2.5 py-0.5 text-xs text-nu-700">
                       {k}
                     </span>
                   ))}
@@ -68,6 +71,7 @@ export default function ResearchPage() {
                           </div>
                         )}
                         <div className="p-5">
+                          <p className="eyebrow text-nu-600">Software</p>
                           <h3 className="mt-1 flex items-center gap-1 font-bold group-hover:text-nu-700">
                             {s.name}
                             <ArrowUpRight />
@@ -80,7 +84,7 @@ export default function ResearchPage() {
                 )}
 
                 <dl className="mt-8 grid gap-6 border-t border-line pt-6 text-sm md:grid-cols-[10rem_1fr]">
-                  <dt className="pt-0.5 font-bold text-muted">関連技術</dt>
+                  <dt className="eyebrow pt-0.5 text-muted">Technologies</dt>
                   <dd className="flex flex-wrap gap-1.5">
                     {t.technologies.map((tech) => (
                       <span key={tech} className="chip">{tech}</span>
@@ -89,7 +93,7 @@ export default function ResearchPage() {
 
                   {related.length > 0 && (
                     <>
-                      <dt className="pt-0.5 font-bold text-muted">関連プロジェクト</dt>
+                      <dt className="eyebrow pt-0.5 text-muted">Projects</dt>
                       <dd>
                         <ul className="space-y-1.5">
                           {related.map((p) => (
@@ -110,7 +114,7 @@ export default function ResearchPage() {
 
                   {relatedPubs.length > 0 && (
                     <>
-                      <dt className="pt-0.5 font-bold text-muted">関連論文</dt>
+                      <dt className="eyebrow pt-0.5 text-muted">Publications</dt>
                       <dd>
                         <ul className="space-y-2.5">
                           {relatedPubs.map((p) => {

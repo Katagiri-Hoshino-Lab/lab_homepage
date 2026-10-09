@@ -42,6 +42,7 @@ export default function PublicationsPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Publications"
         title="研究発表"
         lead={`${years[years.length - 1]}年以降の論文誌・国際会議・国内発表など ${publications.length} 件を掲載しています。`}
       />
@@ -84,12 +85,12 @@ export default function PublicationsPage() {
                   type="button"
                   aria-pressed={active}
                   onClick={() => setCategory(c)}
-                  className={`border px-3 py-1 text-xs ${
-                    active ? 'border-nu-700 bg-nu-700 text-white' : 'border-line bg-white text-muted hover:border-ink/40 hover:text-ink'
+                  className={`rounded-full border px-3 py-1 text-xs transition-colors ${
+                    active ? 'border-ink bg-ink text-white' : 'border-line bg-white text-muted hover:border-ink/40 hover:text-ink'
                   }`}
                 >
                   {c === 'all' ? 'すべて' : publicationCategoryLabel[c]}
-                  <span className={`ml-1.5 tabular-nums ${active ? 'text-white/60' : 'text-muted/70'}`}>{countOf(c)}</span>
+                  <span className={`ml-1.5 font-mono ${active ? 'text-white/60' : 'text-muted/70'}`}>{countOf(c)}</span>
                 </button>
               )
             })}
@@ -98,8 +99,8 @@ export default function PublicationsPage() {
 
         {!isFiltered && featured.length > 0 && (
           <section className="mt-12">
-            <h2 className="text-lg font-bold">代表的な論文</h2>
-            <div className="mt-3 divide-y divide-line border border-line bg-paper px-5">
+            <h2 className="eyebrow text-nu-600">Selected Publications · 代表的な論文</h2>
+            <div className="mt-3 divide-y divide-line rounded-lg border border-nu-200 bg-nu-50/50 px-5">
               {featured.map((p) => (
                 <PublicationEntry key={p.id} publication={p} showYear />
               ))}
@@ -116,8 +117,8 @@ export default function PublicationsPage() {
         ) : (
           grouped.map((g) => (
             <section key={g.year} className="mt-6">
-              <h2 className="sticky top-16 z-10 -mx-4 flex items-baseline gap-3 border-b border-line bg-white px-4 py-3 sm:mx-0 sm:px-0">
-                <span className="tabular-nums text-2xl font-medium">{g.year}</span>
+              <h2 className="sticky top-16 z-10 -mx-4 flex items-baseline gap-3 border-b border-line bg-paper/95 px-4 py-3 backdrop-blur sm:mx-0 sm:px-0">
+                <span className="font-mono text-2xl font-medium">{g.year}</span>
                 <span className="text-xs text-muted">{g.items.length} 件</span>
               </h2>
               <div className="divide-y divide-line">

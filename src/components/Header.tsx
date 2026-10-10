@@ -5,9 +5,18 @@ import { CloseIcon, MenuIcon } from './Icons'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const { pathname } = useLocation()
+  const isHome = pathname === '/'
 
   useEffect(() => setOpen(false), [pathname])
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -21,8 +30,15 @@ export default function Header() {
     }
   }, [open])
 
+  // トップの最上部ではヒーロー画像に溶け込む透明ヘッダー、それ以外は不透明
+  const solid = !isHome || scrolled || open
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/95 backdrop-blur">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        solid ? 'border-b border-white/10 bg-ink/95 backdrop-blur' : 'bg-transparent'
+      }`}
+    >
       <div className="container-site flex h-16 items-center justify-between gap-6">
         <Link to="/" className="flex items-center gap-3 text-white" aria-label={`${siteMeta.siteName} トップへ`}>
           <LabMark />

@@ -22,13 +22,6 @@ const featuredProjects = projects.filter((p) => p.status === 'ongoing' && p.feat
 const featuredThemes = researchThemes.filter((t) => t.featured)
 const faculty = currentMembers.filter((m) => m.category !== 'student' && m.category !== 'staff')
 
-const stats = [
-  { value: researchThemes.length, label: '研究テーマ' },
-  { value: publications.length, label: '論文・発表' },
-  { value: projects.filter((p) => p.status === 'ongoing').length, label: '進行中プロジェクト' },
-  { value: currentMembers.length, label: 'メンバー' },
-]
-
 export default function HomePage() {
   useDocumentTitle()
 
@@ -248,21 +241,6 @@ function Hero() {
         </div>
       </div>
 
-      <div className="relative border-t border-white/10 bg-ink/60 backdrop-blur-sm">
-        <dl className="container-site grid grid-cols-2 sm:grid-cols-4">
-          {stats.map((s, i) => (
-            <div
-              key={s.label}
-              className={`py-5 sm:py-6 ${i % 2 === 1 ? 'pl-5 sm:pl-6' : ''} ${i >= 2 ? 'border-t border-white/10 sm:border-t-0' : ''} ${
-                i > 0 ? 'sm:border-l sm:border-white/10 sm:pl-6' : ''
-              } ${i % 2 === 1 ? 'border-l border-white/10' : ''}`}
-            >
-              <dt className="text-xs text-white/60">{s.label}</dt>
-              <dd className="mt-1 font-mono text-2xl font-medium text-white sm:text-3xl">{s.value}</dd>
-            </div>
-          ))}
-        </dl>
-      </div>
     </section>
   )
 }

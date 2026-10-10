@@ -17,7 +17,7 @@ export default function Footer() {
         </div>
 
         <nav aria-label="サイトマップ">
-          <p className="eyebrow mb-4 text-signal">Sitemap</p>
+          <p className="mb-4 text-sm font-semibold text-white">サイトマップ</p>
           <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
             <li>
               <Link to="/" className="hover:text-white">トップ</Link>
@@ -31,7 +31,7 @@ export default function Footer() {
         </nav>
 
         <div>
-          <p className="eyebrow mb-4 text-signal">Links</p>
+          <p className="mb-4 text-sm font-semibold text-white">外部リンク</p>
           <ul className="space-y-2 text-sm">
             {externalLinks.map((link) => (
               <li key={link.href}>

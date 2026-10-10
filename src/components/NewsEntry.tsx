@@ -15,18 +15,30 @@ export const newsCategoryLabel: Record<NewsItem['category'], string> = {
 type Props = {
   item: NewsItem
   compact?: boolean
+  variant?: 'row' | 'card'
 }
 
-export default function NewsEntry({ item, compact }: Props) {
+const categoryColor: Record<NewsItem['category'], string> = {
+  award: 'border-rose-200 bg-rose-100 text-rose-800',
+  media: 'border-purple-200 bg-purple-100 text-purple-800',
+  publication: 'border-blue-200 bg-blue-100 text-blue-800',
+  event: 'border-orange-200 bg-orange-100 text-orange-800',
+  seminar: 'border-cyan-200 bg-cyan-100 text-cyan-800',
+  workshop: 'border-amber-200 bg-amber-100 text-amber-800',
+  project: 'border-emerald-200 bg-emerald-100 text-emerald-800',
+}
+
+export default function NewsEntry({ item, compact, variant = 'row' }: Props) {
+  const card = variant === 'card'
   return (
-    <article className="grid gap-2 py-5 sm:grid-cols-[7.5rem_1fr] sm:gap-6">
-      <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-1">
+    <article className={card ? 'rounded-xl border border-line bg-white p-4 shadow-sm sm:p-5' : 'grid gap-2 py-5 sm:grid-cols-[7.5rem_1fr] sm:gap-6'}>
+      <div className={card ? 'mb-2 flex flex-wrap items-center gap-2' : 'flex items-center gap-3 sm:flex-col sm:items-start sm:gap-1'}>
         <time dateTime={item.date} className="font-mono text-sm text-muted">
           {formatDate(item.date)}
         </time>
-        <span className="eyebrow text-nu-600">{newsCategoryLabel[item.category]}</span>
+        <span className={card ? `rounded-full border px-2 py-0.5 text-xs ${categoryColor[item.category]}` : 'eyebrow text-nu-600'}>{newsCategoryLabel[item.category]}</span>
       </div>
-      <div className="flex gap-5">
+      <div className={card ? 'flex flex-col gap-4 sm:flex-row sm:gap-5' : 'flex gap-5'}>
         <div className="min-w-0 flex-1">
           <h3 className="font-medium leading-snug text-ink">
             {item.url ? (
@@ -45,7 +57,7 @@ export default function NewsEntry({ item, compact }: Props) {
             src={item.image}
             alt=""
             loading="lazy"
-            className="hidden h-24 w-36 shrink-0 rounded border border-line object-cover sm:block"
+            className={card ? 'max-h-48 w-full shrink-0 rounded-md border border-line object-contain sm:h-28 sm:w-44 sm:object-cover' : 'hidden h-24 w-36 shrink-0 rounded border border-line object-cover sm:block'}
           />
         )}
       </div>

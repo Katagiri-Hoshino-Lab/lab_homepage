@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
+import { highlights } from '@data/highlights'
 import { newsItems } from '@data/news'
 import { heroContent } from '@data/site'
 import { ArrowRight } from '../components/Icons'
 import NewsEntry from '../components/NewsEntry'
-import SectionHeading from '../components/SectionHeading'
+import SmartLink from '../components/SmartLink'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 
 const latestNews = newsItems.slice(0, 5)
@@ -14,12 +15,35 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <section className="border-y border-line bg-white py-16 sm:py-24">
+      <section aria-label="研究室の紹介リンク" className="border-b border-line bg-slate-50 py-4 sm:py-6">
         <div className="container-site">
-          <SectionHeading eyebrow="News" title="最新情報" action={{ label: 'ニュース一覧', to: '/news' }} />
-          <div className="divide-y divide-line border-y border-line">
+          <ul className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 sm:gap-4">
+            {highlights.map((highlight) => (
+              <li key={highlight.title} className="w-52 shrink-0 snap-start sm:w-64">
+                <SmartLink href={highlight.url} className="group block h-full overflow-hidden rounded-xl border border-line bg-white transition-colors hover:border-blue-300">
+                  <img src={highlight.image} alt="" loading="lazy" className="aspect-video w-full object-cover" />
+                  <div className="p-3">
+                    <p className="font-semibold text-ink group-hover:text-blue-700">{highlight.title}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-muted">{highlight.subtitle}</p>
+                  </div>
+                </SmartLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <section className="bg-white py-6 sm:py-8" aria-labelledby="latest-news-heading">
+        <div className="container-site">
+          <div className="mb-6 flex flex-wrap items-baseline justify-between gap-3">
+            <h2 id="latest-news-heading" className="text-2xl font-bold tracking-tight">最新情報</h2>
+            <Link to="/news" className="inline-flex items-center gap-1 text-sm font-medium text-blue-700 hover:underline">
+              ニュース一覧
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="space-y-3">
             {latestNews.map((item) => (
-              <NewsEntry key={item.id} item={item} compact />
+              <NewsEntry key={item.id} item={item} variant="card" />
             ))}
           </div>
         </div>
@@ -30,52 +54,25 @@ export default function HomePage() {
 
 function Hero() {
   return (
-    <section className="relative flex min-h-[38rem] h-[100svh] max-h-[60rem] flex-col overflow-hidden bg-ink text-white">
+    <section className="relative mt-16 overflow-hidden border-b border-line bg-ink text-white">
       <img
         src={import.meta.env.BASE_URL + 'img/hero-bg.jpg'}
         alt=""
         aria-hidden
         fetchPriority="high"
-        className="absolute inset-0 h-full w-full object-cover opacity-55"
+        className="absolute inset-0 h-full w-full object-cover"
       />
-      <div className="bg-grid absolute inset-0" aria-hidden />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/20" aria-hidden />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent" aria-hidden />
-
-      <div className="container-site relative flex flex-1 flex-col justify-center pb-10 pt-28">
-        <p className="eyebrow flex items-center gap-3 text-signal">
-          <span className="h-px w-8 bg-signal" />
-          Katagiri-Hoshino Lab<span className="hidden sm:inline"> · Nagoya University</span>
-        </p>
-        <h1 className="mt-6 max-w-4xl text-[2.1rem] font-black leading-[1.25] tracking-tight sm:text-6xl sm:leading-[1.15]">
-          {/* 日本語の語の途中で改行されないよう、句ごとに inline-block でまとめる */}
-          <span className="inline-block">AIで切り開く</span>
-          <br />
-          <span className="inline-block">
-            次世代<span className="text-signal">スーパー</span>
-          </span>
-          <span className="inline-block">コンピューティング</span>
+      <div className="absolute inset-0 bg-black/55" aria-hidden />
+      <div className="container-site relative py-8 lg:py-10">
+        <p className="mb-6 text-sm font-bold sm:text-base">{heroContent.eyebrow}</p>
+        <h1 className="mb-6 text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
+          <span className="block">AIで切り開く</span>
+          <span className="mt-3 block"><span className="inline-block">次世代スーパー</span><span className="inline-block">コンピューティング</span></span>
         </h1>
-        <p className="mt-6 max-w-2xl text-[0.95rem] leading-relaxed text-white/75 sm:text-lg">
+        <p className="text-sm font-bold leading-relaxed sm:text-base">
           {heroContent.subtitle}
           {heroContent.description}
         </p>
-        <div className="mt-10 flex flex-wrap gap-3">
-          {heroContent.ctas.map((cta) => (
-            <Link
-              key={cta.href}
-              to={cta.href}
-              className={
-                cta.variant === 'primary'
-                  ? 'inline-flex items-center gap-2 rounded-md bg-signal px-5 py-3 text-sm font-bold text-ink transition-colors hover:bg-white'
-                  : 'inline-flex items-center gap-2 rounded-md border border-white/25 px-5 py-3 text-sm font-medium text-white transition-colors hover:border-white hover:bg-white/5'
-              }
-            >
-              {cta.label}
-              {cta.variant === 'primary' && <ArrowRight />}
-            </Link>
-          ))}
-        </div>
       </div>
     </section>
   )

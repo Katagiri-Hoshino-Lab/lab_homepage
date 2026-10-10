@@ -21,7 +21,7 @@ HTML を直接編集して更新します。専用ツールやビルドは不要
 </article>
 ```
 
-トップにも載せる場合は同じ `<article>` を `index.html` の `<div class="news-list">` にコピーします。トップは新しい5件を残し、古い項目を外します。全件の記録は `news.html` に残します。
+トップにも載せる場合は同じ `<article>` を `index.html` の `<div class="news-list">` にコピーします。トップは参照サイトと同じ5件を掲載しています。更新時は新しいニュースを上に追加し、古い項目を外します。紹介スライドは紹介リンクカードに掲載しています。全件の記録は `news.html` に残します。
 
 カテゴリのクラスは `badge-award`（受賞）、`badge-media`（メディア）、`badge-publication`（発表）、`badge-event`（イベント）、`badge-seminar`（セミナー）、`badge-workshop`（ワークショップ）、`badge-project`（プロジェクト）です。
 
@@ -57,7 +57,7 @@ DOI がない場合はリンクを省略できます。新しい年を作る場�
 
 それぞれ `members.html`、`research.html`、`projects.html` を編集します。同じ種類のカードをコピーし、名前・説明・画像・リンクを変更してください。
 
-研究室概要にも表示する教員は `about.html` のカードも更新します。研究テーマと論文・プロジェクトの関連リンクは、`publications.html#論文のid`、`projects.html#プロジェクトのid` の形です。
+研究室概要の説明とアクセス案内は `about.html`、独立したアクセス案内は `access.html` を更新します。関連論文の著者と掲載先、関連プロジェクトの期間と資金も `research.html` に記載しています。関連リンクは DOI・論文ページ・プロジェクトの公開 URL を使用します。サイト内の項目を指す場合は `publications.html#論文のid`、`projects.html#プロジェクトのid` のように書けます。
 
 集合写真は `img/2027-member.jpg` のような名前で追加し、`members.html` の写真一覧を更新します。
 

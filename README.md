@@ -45,4 +45,10 @@ python3 -m http.server 8000
 
 React・TypeScript・Vite・Tailwind CSS、YAML のデータファイル、Issue フォームから PR を作る仕組みを終了し、HTML の直接編集に一本化しました。旧ソースは Git 履歴に残っています。
 
-ページの URL は `#/members` などから `members.html` などに変更しました。ページ内移動は `members.html#contact` のような通常のリンクです。
+ページの URL は `#/members` などから `members.html` などに変更しました。ページ内移動は `members.html#alumni` のような通常のリンクです。
+
+## 掲載内容の参照元
+
+研究室概要・研究テーマ・メンバー・プロジェクト・研究発表は https://www.hpc.itc.nagoya-u.ac.jp/ の掲載内容を基にしています。研究室概要にアクセス案内も掲載し、独立したアクセスページにも同じ案内を記載しています。参照サイトの JavaScript のタブ・絞り込みは使わず、通常のページ内リンクと HTML 標準の開閉で閲覧します。
+
+トップの最新情報は参照サイトと同じ5件を掲載しています。研究室紹介スライドは紹介リンクカードに置き、ニュース一覧には記録を残しています。

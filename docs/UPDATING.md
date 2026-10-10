@@ -1,80 +1,77 @@
 # サイトの更新方法
 
-論文・発表・ニュースは、**GitHub の Issue フォームに入力するだけ**で更新できます。PC に開発環境は不要です。
-
-## 論文・発表を追加する
-
-1. リポジトリの **Issues → New issue → 「論文・発表を追加」** を開く
-2. 次のどれか1つを入力して送信
-   - **DOI か arXiv がある** → 「DOI / arXiv」欄に URL を貼るだけ。タイトル・著者・会議名・年は自動で取得されます
-   - **BibTeX がある** → 「BibTeX」欄に貼り付け。複数件まとめて追加できます（Google Scholar・DBLP などからコピー）
-   - **どちらもない**（国内発表など） → 種別・タイトル・著者・会議名・発表日を入力
-3. 1〜2分で **PR（Pull Request）が自動で作られ**、Issue にリンクがコメントされます
-4. PR の内容を確認して **Merge** → 数分でサイトに反映されます（Issue も自動で閉じます）
-
-**オプション**
-- 「トップの『最新情報』にも載せる」にチェックすると、ニュースを別に書かなくてもトップに告知が出ます
-- 「代表論文として表示する」にチェックすると、研究発表ページの上部に表示されます
-
-**うまくいかないとき**
-- 情報が足りない・すでに登録済み、などの場合は Issue に理由がコメントされます。**Issue を編集して保存し直すと自動で再実行**され、PR も更新されます
-- 取得した情報が間違っている場合は、フォームの該当欄に正しい値を入れてください（手入力の値が優先されます）
+HTML を直接編集して更新します。専用ツールやビルドは不要です。GitHub 上の鉛筆アイコンから編集することもできます。
 
 ## ニュースを追加する
 
-**Issues → New issue → 「ニュースを追加」** から、種類・日付・タイトル・本文を入力して送信します。写真は「画像」欄にドラッグ＆ドロップで添付できます。あとは論文と同じく、作られた PR をマージするだけです。
+`news.html` の該当する年の `<div class="news-list">` に、次の例をコピーして追加します。新しいニュースを上に置き、`id` は他のニュースと重ならない英数字にします。
 
-## 修正・削除する
-
-データは1件1ファイルの YAML で、`content/` にあります。
-
-```
-content/publications/<年>/<ID>.yaml   論文・発表
-content/news/<年>/<ID>.yaml           ニュース
-```
-
-GitHub 上でファイルを開き、鉛筆アイコンで編集（削除はゴミ箱アイコン）→「Propose changes」で PR を作ってマージします。PR を出すと内容が自動でチェックされ、書式の誤りや重複があれば教えてくれます。
-
-### 論文・発表の項目
-
-| 項目 | 必須 | 内容 |
-| --- | --- | --- |
-| `title` | ○ | タイトル |
-| `authors` | ○ | 著者のリスト |
-| `venue` | ○ | 会議名・論文誌名（巻号を含めてよい） |
-| `year` | ○ | 年（フォルダの年と同じにする） |
-| `category` | ○ | `journal` 論文誌 / `international` 国際会議 / `workshop` ワークショップ / `domestic` 国内発表 / `invited` 招待講演 / `poster` ポスター |
-| `date` | | 発表日・公開日（YYYY-MM-DD）。同じ年の中での並び順に使われます |
-| `pages` | | ページ（例: `353-360`） |
-| `doi` | | DOI（例: `10.1145/3784828.3785335`。URL ではなく DOI だけ） |
-| `arxiv` | | arXiv ID（例: `"2510.00031"`） |
-| `pdf` | | PDF の URL |
-| `url` | | その他のリンク（学会のページなど） |
-| `featured` | | `true` で代表論文として表示 |
-
-### ニュースの項目
-
-| 項目 | 必須 | 内容 |
-| --- | --- | --- |
-| `date` | ○ | 日付（YYYY-MM-DD） |
-| `category` | ○ | `award` 受賞 / `publication` 発表 / `media` メディア / `event` イベント / `seminar` セミナー / `workshop` ワークショップ / `project` プロジェクト |
-| `title` | ○ | タイトル |
-| `summary` | | 本文 |
-| `url` | | 関連リンク |
-| `image` | | 画像（`public/` からのパス。例: `img/news/xxx.jpg`） |
-| `publication` | | 関連する論文・発表の ID（ファイル名） |
-
-## 手元の PC から追加する（任意）
-
-開発環境がある場合は、コマンドでも同じことができます。
-
-```sh
-npm run add -- 10.1145/3784828.3785335              # DOI
-npm run add -- https://arxiv.org/abs/2510.00031 --category international
-npm run add -- refs.bib --news                       # BibTeX（複数件）＋最新情報にも掲載
-npm run validate                                     # データのチェック
+```html
+<article class="news-card" id="example-event-2026">
+  <div class="news-meta">
+    <time datetime="2026-10-11">2026.10.11</time>
+    <span class="badge badge-event">イベント</span>
+  </div>
+  <div class="news-body">
+    <div>
+      <h3>ニュースのタイトル</h3>
+      <p>ニュースの本文です。</p>
+    </div>
+  </div>
+</article>
 ```
 
-## 論文・ニュース以外の情報
+トップにも載せる場合は同じ `<article>` を `index.html` の `<div class="news-list">` にコピーします。トップは新しい5件を残し、古い項目を外します。全件の記録は `news.html` に残します。
 
-メンバー・研究テーマ・プロジェクトなど更新頻度の低い情報は `data/` 以下の TypeScript ファイルで管理しています（`data/members.ts` など）。
+カテゴリのクラスは `badge-award`（受賞）、`badge-media`（メディア）、`badge-publication`（発表）、`badge-event`（イベント）、`badge-seminar`（セミナー）、`badge-workshop`（ワークショップ）、`badge-project`（プロジェクト）です。
+
+写真を付ける場合は画像を `img/` に置き、`news-body` の中で本文の `</div>` の後に追加します。
+
+```html
+<a class="news-photo" href="img/event-2026.jpg" target="_blank" rel="noopener">
+  <img src="img/event-2026.jpg" alt="イベントの集合写真" loading="lazy">
+</a>
+```
+
+## 論文・発表を追加する
+
+`publications.html` の該当する年の `<section class="year-section">` に追加します。
+
+```html
+<article class="publication" id="example-paper-2026">
+  <div class="publication-kind"><span>国際会議</span></div>
+  <div>
+    <h3>論文タイトル</h3>
+    <p class="authors">著者1, 著者2</p>
+    <p class="venue">会議名・論文誌名, pp. 1–10</p>
+    <div class="publication-links">
+      <a class="small-link" href="https://doi.org/10.0000/example" target="_blank" rel="noopener noreferrer">DOI</a>
+    </div>
+  </div>
+</article>
+```
+
+DOI がない場合はリンクを省略できます。新しい年を作る場合は `<section id="year-2027" class="year-section"><h2>2027年</h2>…</section>` を追加し、ページ上部の年別リンクにも `<a href="#year-2027">2027</a>` を追加します。掲載件数を表す見出し文も更新してください。
+
+## メンバー・研究テーマ・プロジェクト
+
+それぞれ `members.html`、`research.html`、`projects.html` を編集します。同じ種類のカードをコピーし、名前・説明・画像・リンクを変更してください。
+
+研究室概要にも表示する教員は `about.html` のカードも更新します。研究テーマと論文・プロジェクトの関連リンクは、`publications.html#論文のid`、`projects.html#プロジェクトのid` の形です。
+
+集合写真は `img/2027-member.jpg` のような名前で追加し、`members.html` の写真一覧を更新します。
+
+## 共通の表示
+
+デザインは `style.css` を編集します。ヘッダーとフッターは各 HTML に直接記載しているため、ナビゲーションや共通文言を変更するときは全ページを更新します。
+
+リンクは `about.html`、画像は `img/example.jpg` のように相対パスで書きます。文章中の `&` は `&amp;`、`<` は `&lt;`、`>` は `&gt;` にします。
+
+## 確認して公開する
+
+1. HTML をブラウザーで開き、PC とスマートフォン幅で表示を確認する。
+2. 編集したページのリンクと画像を確認する。
+3. 変更をコミットして `main` に push する。
+4. GitHub の Actions で `Deploy to GitHub Pages` が成功したことを確認する。
+
+古い表示が残るときはブラウザーを再読み込みしてください。

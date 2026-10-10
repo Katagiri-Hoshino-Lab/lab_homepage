@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>研究紹介 | 名古屋大学 片桐・星野研究室</title>
+    <meta name="description" content="AI・自動チューニング・数値計算・高性能計算基盤を扱う名古屋大学情報基盤センターの研究室サイト">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="名古屋大学 片桐・星野研究室">
+    <meta property="og:title" content="研究紹介 | 名古屋大学 片桐・星野研究室">
+    <meta property="og:description" content="AI・自動チューニング・数値計算・高性能計算基盤を扱う名古屋大学情報基盤センターの研究室サイト">
+    <meta property="og:image" content="https://katagiri-hoshino-lab.github.io/lab_homepage/img/hero-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へスキップ</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">H</span><span>名古屋大学 片桐・星野研究室</span></a>
+        <nav class="desktop-nav" aria-label="メイン">
+          <ul>
+            <li><a href="index.html">トップ</a>
+            </li>
+            <li><a href="about.html">研究室概要</a>
+            </li>
+            <li><a href="research.html" aria-current="page">研究紹介</a>
+            </li>
+            <li><a href="publications.html">研究発表</a>
+            </li>
+            <li><a href="projects.html">プロジェクト</a>
+            </li>
+            <li><a href="members.html">メンバー</a>
+            </li>
+            <li><a href="news.html">ニュース</a>
+            </li>
+            <li><a href="access.html">アクセス</a>
+            </li>
+          </ul>
+        </nav>
+        <details class="mobile-menu">
+          <summary>メニュー</summary>
+          <nav aria-label="メイン（スマートフォン）">
+            <ul>
+              <li><a href="index.html">トップ</a>
+              </li>
+              <li><a href="about.html">研究室概要</a>
+              </li>
+              <li><a href="research.html" aria-current="page">研究紹介</a>
+              </li>
+              <li><a href="publications.html">研究発表</a>
+              </li>
+              <li><a href="projects.html">プロジェクト</a>
+              </li>
+              <li><a href="members.html">メンバー</a>
+              </li>
+              <li><a href="news.html">ニュース</a>
+              </li>
+              <li><a href="access.html">アクセス</a>
+              </li>
+            </ul>
+          </nav>
+        </details>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="page-header">
+        <div class="container">
+          <p class="eyebrow">Research
+          </p>
+          <h1>研究紹介
+          </h1>
+          <p>生成AIによるコード自動生成から自動チューニング、高精度数値計算、大規模シミュレーション、計算機システムの運用まで、スーパーコンピュータの性能を引き出すための研究を幅広く行っています。
+          </p>
+        </div>
+      </section>
+      <div class="container page-content research-layout">
+        <nav class="research-nav" aria-label="研究テーマ">
+          <ol>
+            <li><a href="#ai-for-hpc">生成AI・機械学習のHPC応用</a>
+            </li>
+            <li><a href="#hpc-genie-project">HPC-GENIEプロジェクト</a>
+            </li>
+            <li><a href="#autotuning-and-performance-modeling">自動チューニングと性能モデル</a>
+            </li>
+            <li><a href="#large-scale-numerical-simulation">大規模数値計算シミュレーション</a>
+            </li>
+            <li><a href="#numerical-methods-and-tools">数値計算手法</a>
+            </li>
+            <li><a href="#data-analysis-and-visual-understanding">大規模データ解析と現象理解</a>
+            </li>
+            <li><a href="#systems-and-operations">計算機システムの構築と運用</a>
+            </li>
+          </ol>
+        </nav>
+        <div class="sections">
+          <section id="ai-for-hpc">
+            <p class="eyebrow">01
+            </p>
+            <h2>生成AI・機械学習のHPC応用
+            </h2>
+            <ul class="tags">
+              <li>生成AI
+              </li>
+              <li>LLM
+              </li>
+              <li>HPCコード生成
+              </li>
+              <li>自動最適化
+              </li>
+              <li>強化学習
+              </li>
+              <li>マルチエージェント
+              </li>
+            </ul>
+            <p>大規模言語モデル（LLM）をはじめとする生成AI技術を活用し、高性能計算（HPC）向けコードの自動生成・自動最適化を実現する研究を推進しています。HPC-GENIEプロジェクトでは、LLMによるBLASコードやGPUコードの自動生成、マルチエージェントシステムによる自動チューニング（VibeCodeHPC）、強化学習を用いたLLMのHPCコード生成能力向上など、生成AIとHPCの融合による次世代ソフトウェア開発手法の確立を目指しています。また、ディープラーニングを用いた数値計算ライブラリの前処理選択や、機械学習によるテストシーケンス最適化にも取り組んでいます。
+            </p>
+            <dl class="research-details">
+              <dt>技術
+              </dt>
+              <dd>
+                <ul class="tags">
+                  <li>LLM
+                  </li>
+                  <li>コード生成
+                  </li>
+                  <li>強化学習
+                  </li>
+                  <li>RAG
+                  </li>
+                  <li>MCP
+                  </li>
+                </ul>
+              </dd>
+              <dt>関連プロジェクト
+              </dt>
+              <dd>
+                <ul>
+                  <li><a href="projects.html#hpc-genie">HPC-GENIE: High-Performance Computing with Generative Neural Intelligence for Execution</a>
+                  </li>
+                  <li><a href="projects.html#craft-programming-intelligence">機械学習技術の活用による職人的プログラミングの知能化</a>
+                  </li>
+                </ul>
+              </dd>
+              <dt>関連論文・発表
+              </dt>
+              <dd>
+                <ul>
+                  <li><a href="publications.html#geofem-claude-code-2026">Evaluating Claude Code&#x27;s Coding and Test Automation for GPU Acceleration of a Legacy Fortran Application: A GeoFEM Case Study</a>
+                    <p class="small-text">SCA/HPCAsiaWS &#x27;26 - LLM4HPCAsia 2026, 2026
+                    </p>
+                  </li>
+                  <li><a href="publications.html#hayashi-iwapt-vibecodehpc-2026">VibeCodeHPC: A Multi LLM Agent System for HPC Code Auto-Tuning</a>
+                    <p class="small-text">The Twenty-first International Workshop on Automatic Performance Tuning (iWAPT2026, in conjunction with IEEE IPDPS 2026), 2026
+                    </p>
+                  </li>
+                  <li><a href="publications.html#mikasa-isc26-llm-hpc">Improving HPC Code Generation Capability of LLMs via Online Reinforcement Learning with Real-Machine Benchmark Rewards</a>
+                    <p class="small-text">The 2nd International Workshop on Foundational Large Language Models Advances for HPC at ISC&#x27;26, 2026
+                    </p>
+                  </li>
+                  <li><a href="publications.html#mukunoki-hpc200-blas-2025">BLASコードを題材としたGPTモデルによる数値計算コード実装支援に関する考察</a>
+                    <p class="small-text">情報処理学会研究報告: ハイパフォーマンスコンピューティング, Vol. 2025-HPC-200, No. 10, 2025
+                    </p>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </section>
+          <section id="hpc-genie-project">
+            <p class="eyebrow">02
+            </p>
+            <h2>HPC-GENIEプロジェクト
+            </h2>
+            <ul class="tags">
+              <li>生成AI
+              </li>
+              <li>LLM
+              </li>
+              <li>RAG
+              </li>
+              <li>Auto-tuning
+              </li>
+              <li>XAI
+              </li>
+              <li>ローカルLLM
+              </li>
+            </ul>
+            <p>HPC-GENIE（High-Performance Computing with Generative Neural Intelligence for Execution）は、生成AI技術を活用してアーキテクチャごとに最適化されたHPCコードの自動生成技術を開発するプロジェクトです。名古屋大学情報基盤センターを中心に国内大学・研究所との共同研究として推進しています。LLMやRAG（Retrieval Augmented Generation）を活用したコード生成AI技術によりHPCソフトウェアの開発効率を高める革新的AI基盤の開発を目指し、混合精度演算、自動性能チューニング（Auto-tuning）、説明可能AI（XAI）の技術を統合した持続可能なHPCソフトウェア基盤の構築を目標としています。ローカルLLMの活用や国産Swallow LLMの適用も推進し、国産AIエージェント基盤の開発にも取り組んでいます。
+            </p>
+            <div class="software-grid"><a class="software-card" href="https://github.com/Katagiri-Hoshino-Lab/VibeCodeHPC" target="_blank" rel="noopener noreferrer"><img src="img/vibecodehpc_screenshot.png" alt="" loading="lazy">
+                <div>
+                  <p class="eyebrow">Software
+                  </p>
+                  <h3>VibeCodeHPC
+                  </h3>
+                  <p>複数のAIコーディングCLIがtmux上で連携するマルチエージェント自動チューニングフレームワーク。HPC並列化、ローカルLLM配備、GPU最適化などプラグイン可能な戦略に対応し、進化的探索による性能最適化を実現します。
+                  </p>
+                </div></a><a class="software-card" href="https://github.com/kotama7/ARI" target="_blank" rel="noopener noreferrer"><img src="img/ari_logo.png" alt="" loading="lazy">
+                <div>
+                  <p class="eyebrow">Software
+                  </p>
+                  <h3>ARI (Artificial Research Intelligence)
+                  </h3>
+                  <p>自律的な科学研究パイプラインを実現するシステム。研究目標をMarkdownで記述すると、仮説生成・実験実行・結果分析・論文執筆・再現性検証を自動で行います。ラップトップからスーパーコンピュータまでスケールし、MCPプラグインアーキテクチャにより拡張可能です。
+                  </p>
+                </div></a>
+            </div>
+            <dl class="research-details">
+              <dt>技術
+              </dt>
+              <dd>
+                <ul class="tags">
+                  <li>LLM
+                  </li>
+                  <li>マルチエージェント
+                  </li>
+                  <li>RAG
+                  </li>
+                  <li>ファインチューニング
+                  </li>
+                  <li>CLI
+                  </li>
+                </ul>
+              </dd>
+              <dt>関連プロジェクト
+              </dt>
+              <dd>
+                <ul>
+                  <li><a href="projects.html#hpc-genie">HPC-GENIE: High-Performance Computing with Generative Neural Intelligence for Execution</a>
+                  </li>
+                </ul>
+              </dd>
+              <dt>関連論文・発表
+              </dt>
+              <dd>
+                <ul>
+                  <li><a href="publications.html#hayashi-iwapt-vibecodehpc-2026">VibeCodeHPC: A Multi LLM Agent System for HPC Code Auto-Tuning</a>
+                    <p class="small-text">The Twenty-first International Workshop on Automatic Performance Tuning (iWAPT2026, in conjunction with IEEE IPDPS 2026), 2026
+                    </p>
+                  </li>
+                  <li><a href="publications.html#mikasa-isc26-llm-hpc">Improving HPC Code Generation Capability of LLMs via Online Reinforcement Learning with Real-Machine Benchmark Rewards</a>
+                    <p class="small-text">The 2nd International Workshop on Foundational Large Language Models Advances for HPC at ISC&#x27;26, 2026
+                    </p>
+                  </li>
+                  <li><a href="publications.html#geofem-claude-code-2026">Evaluating Claude Code&#x27;s Coding and Test Automation for GPU Acceleration of a Legacy Fortran Application: A GeoFEM Case Study</a>
+                    <p class="small-text">SCA/HPCAsiaWS &#x27;26 - LLM4HPCAsia 2026, 2026
+                    </p>
+                  </li>
+                  <li><a href="publications.html#mukunoki-hpc200-blas-2025">BLASコードを題材としたGPTモデルによる数値計算コード実装支援に関する考察</a>
+                    <p class="small-text">情報処理学会研究報告: ハイパフォーマンスコンピューティング, Vol. 2025-HPC-200, No. 10, 2025
+                    </p>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </section>
+          <section id="autotuning-and-performance-modeling">
+            <p class="eyebrow">03
+            </p>
+            <h2>自動チューニングと性能モデル
+            </h2>
+            <ul class="tags">
+              <li>自動チューニング
+              </li>
+              <li>性能モデル
+              </li>
+              <li>ppOpen-AT
+              </li>
+              <li>量子アニーリング
+              </li>
+              <li>XAI
+              </li>
+            </ul>
+            <p>ソフトウェアが自ら計算環境に適応し最適な性能を発揮するための自動チューニング方式を研究しています。自動チューニング専用言語ppOpen-ATの開発では、ループ変換、混合精度演算の最適化、OpenMP/OpenACC対応などの機能を実装してきました。近年は量子コンピューティングへの自動チューニング適用にも取り組み、コヒーレントイジングマシンやCMOSアニーリングマシンの性能パラメタ最適化、XAI（説明可能なAI）を活用した自動チューニング結果の解析など、新しい計算パラダイムへの展開を進めています。また、d-Spline近似による実行時自動チューニングや、GPTuneを用いたパラメタ自動チューニングの評価にも取り組んでいます。
+            </p>
+            <dl class="research-details">
+              <dt>技術
+              </dt>
+              <dd>
+                <ul class="tags">
+                  <li>性能評価
+                  </li>
+                  <li>モデルベース最適化
+                  </li>
+                  <li>コンパイラ/実行時制御
+                  </li>
+                  <li>量子コンピューティング
+                  </li>
+                </ul>
+              </dd>
+              <dt>関連プロジェクト
+              </dt>
+              <dd>
+                <ul>
+                  <li><a href="projects.html#autotuning-adaptive-software">自らを進化させ未知の計算環境に適応するソフトウェア自動チューニング機構方式の研究</a>
+                  </li>
+                  <li><a href="projects.html#autotuning-mathematical-foundation">複合的・階層的な自動チューニングを実現する数理基盤手法の研究とライブラリの開発</a>
+                  </li>
+                  <li><a href="projects.html#performance-model-japan-taiwan">国際交流による自動チューニングのための性能モデルの深化</a>
+                  </li>
+                </ul>
+              </dd>
+              <dt>関連論文・発表
+              </dt>
+              <dd>
+                <ul>
+                  <li><a href="publications.html#hanyu-candarw-2025">An Algorithm Portfolio Approach for Parameter Tuning in Coherent Ising Machines</a>
+                    <p class="small-text">2025 CANDARW, 2025
+                    </p>
+                  </li>
+                  <li><a href="publications.html#katagiri-jsiam-quantum-at-2024">疑似量子アニーリングにおける自動チューニングの適用</a>
+                    <p class="small-text">日本応用数理学会 2024年度年会予稿集, 2024
+                    </p>
+                  </li>
+                  <li><a href="publications.html#aoki-mcsoc-xai-2024">Adaptation of XAI to Auto-tuning for Numerical Libraries</a>
+                    <p class="small-text">IEEE MCSoC 2024, 2024
+                    </p>
+                  </li>
+                  <li><a href="publications.html#iwapt2016-ppopenat">Auto-tuning of Hybrid MPI/OpenMP Execution with Code Selection by ppOpen-AT</a>
+                    <p class="small-text">The Eleventh International Workshop on Automatic Performance Tuning (iWAPT2016), Proceedings of IPDPSW2016, 2016
+                    </p>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </section>
+          <section id="large-scale-numerical-simulation">
+            <p class="eyebrow">04
+            </p>
+            <h2>大規模数値計算シミュレーション
+            </h2>
+            <ul class="tags">
+              <li>HPC
+              </li>
+              <li>GPU
+              </li>
+              <li>数値計算
+              </li>
+              <li>分子軌道計算
+              </li>
+              <li>流体力学
+              </li>
+              <li>地震シミュレーション
+              </li>
+            </ul>
+            <p>流体力学、分子動力学、量子化学計算、地震シミュレーションなど、工学・理学分野の大規模数値計算シミュレーションを対象に、スーパーコンピュータやGPUを活用した高性能化の研究を行っています。フラグメント分子軌道法（FMO）プログラムABINIT-MPのGPU対応やA64FX最適化、大気力学コアSCALE-DGの性能改善、分子動力学アプリケーションMODYLASのメニーコア環境向け最適化、医用画像処理（LDDMM）のGPU高速化、地震シミュレーションのOpenACC並列化など、多岐にわたる応用分野で実践的な高性能化に取り組んでいます。
+            </p>
+            <dl class="research-details">
+              <dt>技術
+              </dt>
+              <dd>
+                <ul class="tags">
+                  <li>並列計算
+                  </li>
+                  <li>GPU
+                  </li>
+                  <li>OpenACC
+                  </li>
+                  <li>A64FX
+                  </li>
+                  <li>MPI
+                  </li>
+                </ul>
+              </dd>
+              <dt>関連論文・発表
+              </dt>
+              <dd>
+                <ul>
+                  <li><a href="publications.html#ren-hpcasia25-scale-dg">Performance Evaluation of Loop Body Splitting for Fast Modal Filtering in SCALE-DG on A64FX</a>
+                    <p class="small-text">HPC Asia &#x27;25 Workshops, 2025
+                    </p>
+                  </li>
+                  <li><a href="publications.html#doi-jcc-fmo-mp2-2025">Large-Scale FMO-MP2 Calculations of the Spike Protein Droplet Model</a>
+                    <p class="small-text">Journal of Computational Chemistry, Vol. 46, No. 4, 2025
+                    </p>
+                  </li>
+                  <li><a href="publications.html#ohshima-ipdpsw-modylas-2019">Performance Evaluation of the MODYLAS Application on Modern Multi-core and Many-Core Environments</a>
+                    <p class="small-text">IPDPS Workshops 2019, 2019
+                    </p>
+                  </li>
+                  <li><a href="publications.html#andoh-jsupercomp-modylas-2018">A Thread-level Parallelization of Pairwise Additive Potential and Force Calculations Suitable for Current Many-core Architectures</a>
+                    <p class="small-text">Journal of Supercomputing, Vol. 74, No. 6, 2018
+                    </p>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </section>
+          <section id="numerical-methods-and-tools">
+            <p class="eyebrow">05
+            </p>
+            <h2>数値計算手法
+            </h2>
+            <ul class="tags">
+              <li>精度保証
+              </li>
+              <li>高精度演算
+              </li>
+              <li>混合精度
+              </li>
+              <li>尾崎スキーム
+              </li>
+              <li>数値計算ライブラリ
+              </li>
+            </ul>
+            <p>高精度数値計算や精度保証付き数値計算の技術開発を行っています。尾崎スキームを用いた高精度行列積アルゴリズムのGPU実装、Tensor Coreを活用したDGEMM、低精度演算器による高精度計算エミュレーション、混合精度共役勾配法など、AI時代のハードウェアにおける科学技術計算の高精度化を追求しています。また、通信回避・削減アルゴリズムの自動チューニング、疎行列反復解法の前処理最適化、LAPACKの固有値計算テストシーケンス最適化など、数値計算ライブラリの信頼性と性能向上に幅広く取り組んでいます。
+            </p>
+            <dl class="research-details">
+              <dt>技術
+              </dt>
+              <dd>
+                <ul class="tags">
+                  <li>Tensor Core
+                  </li>
+                  <li>GPU
+                  </li>
+                  <li>BLAS
+                  </li>
+                  <li>LAPACK
+                  </li>
+                  <li>疎行列計算
+                  </li>
+                </ul>
+              </dd>
+              <dt>関連プロジェクト
+              </dt>
+              <dd>
+                <ul>
+                  <li><a href="projects.html#communication-avoiding-algorithms">通信回避・削減アルゴリズムのための自動チューニング技術の新展開</a>
+                  </li>
+                  <li><a href="projects.html#accuracy-guaranteed-hpc">精度保証のための高性能計算技術の創成</a>
+                  </li>
+                  <li><a href="projects.html#mukunoki-kakenhi-25K24387">AI向けスーパーコンピュータにおける科学技術計算の高精度演算技術応用</a>
+                  </li>
+                </ul>
+              </dd>
+              <dt>関連論文・発表
+              </dt>
+              <dd>
+                <ul>
+                  <li><a href="publications.html#ren-cpe-mixed-precision-2025">Auto-Tuning Mixed-Precision Computation by Specifying Multiple Regions</a>
+                    <p class="small-text">Concurrency and Computation: Practice and Experience, Vol. 37, No. 2, 2025
+                    </p>
+                  </li>
+                  <li><a href="publications.html#ichimura-ipdpsw-accurate-mm-2018">Threaded Accurate Matrix-Matrix Multiplications with Sparse Matrix-Vector Multiplications</a>
+                    <p class="small-text">IPDPS Workshops 2018, 2018
+                    </p>
+                  </li>
+                  <li><a href="publications.html#ozaki-am-verified-2021">Verified Numerical Computations for Large-Scale Linear Systems</a>
+                    <p class="small-text">Applications of Mathematics, Vol. 66, No. 2, 2021
+                    </p>
+                  </li>
+                  <li><a href="publications.html#ishiguro-candarw-gpu-2020">Performance Evaluation of Accurate Matrix-Matrix Multiplication on GPU Using Sparse Matrix Multiplications</a>
+                    <p class="small-text">CANDAR Workshops 2020, 2020
+                    </p>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </section>
+          <section id="data-analysis-and-visual-understanding">
+            <p class="eyebrow">06
+            </p>
+            <h2>大規模データ解析と現象理解
+            </h2>
+            <ul class="tags">
+              <li>データ解析
+              </li>
+              <li>可視化
+              </li>
+              <li>VR
+              </li>
+              <li>データ駆動型解析
+              </li>
+              <li>プラズマ物理
+              </li>
+            </ul>
+            <p>シミュレーション結果として得られる大規模データを解析し、現象を理解しやすくするための手法を研究しています。プラズマ乱流シミュレーションにおける位相空間分布関数の可視化やクラスタリングによるデータ駆動型解析、VR/MRデバイスを用いた3次元可視化、ジェット流体のスペクトル固有直交分解（SPOD）解析、深層強化学習によるジェット速度分布最適化など、計算科学とデータ科学の融合領域の研究を推進しています。
+            </p>
+            <dl class="research-details">
+              <dt>技術
+              </dt>
+              <dd>
+                <ul class="tags">
+                  <li>解析ワークフロー
+                  </li>
+                  <li>ポスト処理
+                  </li>
+                  <li>可視化支援
+                  </li>
+                  <li>機械学習
+                  </li>
+                </ul>
+              </dd>
+              <dt>関連論文・発表
+              </dt>
+              <dd>
+                <ul>
+                  <li><a href="publications.html#sadakata-pfr-gkv-2022">A Novel Approach for Data Analysis Based on Visualization of Phase Space Distribution Function in Plasma Turbulence Simulations</a>
+                    <p class="small-text">Plasma and Fusion Research, Vol. 17, 2022
+                    </p>
+                  </li>
+                  <li><a href="publications.html#kadu-pof-spod-2020">Application of Spectral Proper Orthogonal Decomposition to Velocity and Passive Scalar Fields in a Swirling Coaxial Jet</a>
+                    <p class="small-text">Physics of Fluids, Vol. 32, No. 1, 2020
+                    </p>
+                  </li>
+                  <li><a href="publications.html#kadu-ijhmt-swirling-2019">Numerical Investigation of Passive Scalar Transport and Mixing in a Turbulent Unconfined Coaxial Swirling Jet</a>
+                    <p class="small-text">International Journal of Heat and Mass Transfer, Vol. 142, 2019
+                    </p>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </section>
+          <section id="systems-and-operations">
+            <p class="eyebrow">07
+            </p>
+            <h2>計算機システムの構築と運用
+            </h2>
+            <ul class="tags">
+              <li>システム構築
+              </li>
+              <li>運用
+              </li>
+              <li>スーパーコンピュータ「不老」
+              </li>
+              <li>Arm
+              </li>
+              <li>クラウド連携
+              </li>
+            </ul>
+            <p>共同利用・共同研究拠点としての最先端スーパーコンピュータの構築・運用に関する研究を行っています。名古屋大学情報基盤センターが運用するスーパーコンピュータ「不老」をはじめとする大規模計算基盤の利用技術開発、Arm（Ampere Altra, A64FX）やGPU等の新しいプロセッサアーキテクチャの性能評価、クラウド環境（Azure CycleCloud）との連携調査、分散深層学習の大規模実行環境の整備などに取り組んでいます。また、SPIRALコードジェネレータのスパコン向け最適化など、次世代のHPC利用環境の研究にも携わっています。
+            </p>
+            <dl class="research-details">
+              <dt>技術
+              </dt>
+              <dd>
+                <ul class="tags">
+                  <li>計算機システム
+                  </li>
+                  <li>運用設計
+                  </li>
+                  <li>性能評価
+                  </li>
+                  <li>ベンチマーク
+                  </li>
+                </ul>
+              </dd>
+              <dt>関連論文・発表
+              </dt>
+              <dd>
+                <ul>
+                  <li><a href="publications.html#kitai-ipdpsw-spiral-2021">An Auto-tuning with Adaptation of A64 Scalable Vector Extension for SPIRAL</a>
+                    <p class="small-text">IPDPS Workshops 2021, 2021
+                    </p>
+                  </li>
+                  <li><a href="publications.html#morishita-ipdpsw-gkv-2021">Parallelization of GKV benchmark using OpenACC</a>
+                    <p class="small-text">IPDPS Workshops 2021, 2021
+                    </p>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="footer-title">名古屋大学 片桐・星野研究室
+          </p>
+          <p>名古屋大学 情報基盤センター 大規模計算支援環境研究部門<br>〒464-8601 愛知県名古屋市千種区不老町 名古屋大学 情報基盤センター 5階
+          </p>
+        </div>
+        <nav aria-label="サイトマップ">
+          <h2>サイトマップ
+          </h2>
+          <ul class="footer-nav">
+            <li><a href="index.html">トップ</a>
+            </li>
+            <li><a href="about.html">研究室概要</a>
+            </li>
+            <li><a href="research.html">研究紹介</a>
+            </li>
+            <li><a href="publications.html">研究発表</a>
+            </li>
+            <li><a href="projects.html">プロジェクト</a>
+            </li>
+            <li><a href="members.html">メンバー</a>
+            </li>
+            <li><a href="news.html">ニュース</a>
+            </li>
+            <li><a href="access.html">アクセス</a>
+            </li>
+          </ul>
+        </nav>
+        <div>
+          <h2>外部リンク
+          </h2>
+          <ul>
+            <li><a href="https://zenn.dev/p/katalab" target="_blank" rel="noopener noreferrer">研究室ブログ (Zenn)</a>
+            </li>
+            <li><a href="https://github.com/Katagiri-Hoshino-Lab" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </li>
+            <li><a href="https://www.itc.nagoya-u.ac.jp" target="_blank" rel="noopener noreferrer">名古屋大学 情報基盤センター</a>
+            </li>
+            <li><a href="https://www.nagoya-u.ac.jp" target="_blank" rel="noopener noreferrer">名古屋大学</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container copyright">© 2026 Katagiri-Hoshino Lab, Nagoya University.
+      </div>
+    </footer>
+  </body>
+</html>

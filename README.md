@@ -1,51 +1,48 @@
 # 片桐・星野研究室 Web サイト
 
-名古屋大学 情報基盤センター 片桐・星野研究室のホームページです。React + TypeScript + Vite + Tailwind CSS で構築し、GitHub Pages で公開します。
-
-## 論文・発表・ニュースの更新
-
-**Issues → New issue → 「論文・発表を追加」/「ニュースを追加」** に入力するだけで、更新用の PR が自動で作られます。DOI・arXiv・BibTeX を貼れば、タイトルや著者は自動で取得されます。詳しくは [docs/UPDATING.md](docs/UPDATING.md) を参照してください。
-
-## 開発
-
-```sh
-npm install
-npm run dev       # 開発サーバ
-npm run build     # 本番ビルド（dist/）
-npm run preview   # ビルド結果の確認
-npm run validate  # content/ のデータチェック
-npm run add -- <DOI | arXiv | BibTeX ファイル>  # 論文・発表を追加
-```
-
-## 自動化（GitHub Actions）
-
-| ワークフロー | 動作 |
-| --- | --- |
-| `content-from-issue.yml` | Issue フォームの内容から `content/` の YAML を作り、PR を作成・更新する |
-| `ci.yml` | PR ごとにデータの検証とビルドを行う |
-| `deploy.yml` | `main` への push でビルドし、GitHub Pages にデプロイする |
+名古屋大学 情報基盤センター 片桐・星野研究室のホームページです。
+**通常の HTML と CSS だけ**で構築しています。JavaScript、React、Node.js、npm、ビルドツール、外部ライブラリは不要です。
 
 ## 構成
 
-```
-content/publications/<年>/<ID>.yaml  論文・発表（1件1ファイル）
-content/news/<年>/<ID>.yaml          ニュース（1件1ファイル）
-data/                 メンバー・研究テーマ・プロジェクトなど、その他の表示データ
-public/img/           画像
-scripts/              データの追加・検証スクリプト
-src/components/       共通コンポーネント
-src/pages/            各ページ
-.github/              Issue フォームとワークフロー
-docs/UPDATING.md      更新方法
-features/, 要件定義書.md  要件書
+| ファイル | 内容 |
+| --- | --- |
+| `index.html` | トップ（タイトル、紹介リンク、最新ニュース5件） |
+| `about.html` | 研究室概要・学生募集 |
+| `research.html` | 研究紹介 |
+| `publications.html` | 年別の論文・発表一覧 |
+| `projects.html` | 研究プロジェクト |
+| `members.html` | メンバー・卒業生・集合写真 |
+| `news.html` | 年別ニュース一覧 |
+| `access.html` | アクセス |
+| `404.html` | ページが見つからない場合の案内 |
+| `style.css` | 全ページ共通のデザイン・スマートフォン対応 |
+| `img/` | 画像 |
+| `favicon.svg` | サイトアイコン |
+| `.github/workflows/deploy.yml` | GitHub Pages への公開設定 |
+
+## 確認する
+
+`index.html` をブラウザーで開けば確認できます。インストールやビルドは必要ありません。
+
+ローカルサーバーを使う場合は、Python がある環境で次のコマンドも使えます。Python はサイトの動作・編集・公開に必須ではありません。
+
+```sh
+python3 -m http.server 8000
 ```
 
-| 内容 | ファイル |
-| --- | --- |
-| サイト共通設定・トップ文言・研究室概要 | `data/site.ts` |
-| 研究テーマ | `data/research.ts` |
-| メンバー・卒業生 | `data/members.ts` |
-| プロジェクト | `data/projects.ts` |
-| トップのハイライトカード | `data/highlights.ts` |
-| 集合写真 | `data/gallery.ts` |
-| アクセス | `data/access.ts` |
+## 更新・公開する
+
+各 HTML をテキストエディターや GitHub 上で直接編集します。画像は `img/` に追加します。詳しい例は [docs/UPDATING.md](docs/UPDATING.md) を参照してください。
+
+`main` に push すると GitHub Actions が HTML・CSS・画像をそのまま GitHub Pages に公開します。公開時の変換・ビルド処理はありません。
+
+公開先：https://katagiri-hoshino-lab.github.io/lab_homepage/
+
+スマートフォンのメニューは HTML の `details` / `summary` を使います。写真の拡大は画像へのリンク、地図は Google Maps へのリンクです。検索・絞り込みはありません。
+
+## 旧構成からの変更
+
+React・TypeScript・Vite・Tailwind CSS、YAML のデータファイル、Issue フォームから PR を作る仕組みを終了し、HTML の直接編集に一本化しました。旧ソースは Git 履歴に残っています。
+
+ページの URL は `#/members` などから `members.html` などに変更しました。ページ内移動は `members.html#contact` のような通常のリンクです。

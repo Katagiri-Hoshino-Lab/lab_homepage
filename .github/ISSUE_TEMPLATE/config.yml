@@ -1,1 +1,5 @@
 blank_issues_enabled: true
+contact_links:
+  - name: サイトの更新方法
+    url: https://github.com/Katagiri-Hoshino-Lab/lab_homepage/blob/main/docs/UPDATING.md
+    about: ニュース・論文・メンバーは HTML を直接編集して更新します。

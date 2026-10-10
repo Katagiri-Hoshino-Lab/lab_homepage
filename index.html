@@ -1,24 +1,263 @@
 <!doctype html>
 <html lang="ja">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>名古屋大学 片桐・星野研究室</title>
-    <meta name="description" content="名古屋大学 情報基盤センター 片桐・星野研究室。生成AIによるHPCコード自動生成、自動チューニング、数値計算、大規模シミュレーションの研究を行っています。" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="名古屋大学 片桐・星野研究室" />
-    <meta property="og:title" content="名古屋大学 片桐・星野研究室" />
-    <meta property="og:description" content="AIで切り開く次世代スーパーコンピューティング" />
-    <meta property="og:image" content="./img/hero-bg.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <meta name="description" content="AI・自動チューニング・数値計算・高性能計算基盤を扱う名古屋大学情報基盤センターの研究室サイト">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="名古屋大学 片桐・星野研究室">
+    <meta property="og:title" content="名古屋大学 片桐・星野研究室">
+    <meta property="og:description" content="AI・自動チューニング・数値計算・高性能計算基盤を扱う名古屋大学情報基盤センターの研究室サイト">
+    <meta property="og:image" content="https://katagiri-hoshino-lab.github.io/lab_homepage/img/hero-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <a class="skip-link" href="#main">本文へスキップ</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">H</span><span>名古屋大学 片桐・星野研究室</span></a>
+        <nav class="desktop-nav" aria-label="メイン">
+          <ul>
+            <li><a href="index.html" aria-current="page">トップ</a>
+            </li>
+            <li><a href="about.html">研究室概要</a>
+            </li>
+            <li><a href="research.html">研究紹介</a>
+            </li>
+            <li><a href="publications.html">研究発表</a>
+            </li>
+            <li><a href="projects.html">プロジェクト</a>
+            </li>
+            <li><a href="members.html">メンバー</a>
+            </li>
+            <li><a href="news.html">ニュース</a>
+            </li>
+            <li><a href="access.html">アクセス</a>
+            </li>
+          </ul>
+        </nav>
+        <details class="mobile-menu">
+          <summary>メニュー</summary>
+          <nav aria-label="メイン（スマートフォン）">
+            <ul>
+              <li><a href="index.html" aria-current="page">トップ</a>
+              </li>
+              <li><a href="about.html">研究室概要</a>
+              </li>
+              <li><a href="research.html">研究紹介</a>
+              </li>
+              <li><a href="publications.html">研究発表</a>
+              </li>
+              <li><a href="projects.html">プロジェクト</a>
+              </li>
+              <li><a href="members.html">メンバー</a>
+              </li>
+              <li><a href="news.html">ニュース</a>
+              </li>
+              <li><a href="access.html">アクセス</a>
+              </li>
+            </ul>
+          </nav>
+        </details>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="hero">
+        <div class="container">
+          <p class="hero-eyebrow">名古屋大学 片桐・星野研究室
+          </p>
+          <h1>AIで切り開く<span class="hero-title-line"><span>次世代スーパー</span><span>コンピューティング</span></span>
+          </h1>
+          <p class="hero-intro">高性能計算（HPC）分野における、生成AIによるコード自動生成、自動チューニング、混合精度計算、大規模シミュレーションを柱に、名古屋大学情報基盤センターを拠点として最先端スーパーコンピュータの性能を最大限に引き出す計算科学とコンピュータサイエンスの研究を推進しています。
+          </p>
+        </div>
+      </section>
+      <section class="highlights" aria-label="研究室の紹介リンク">
+        <div class="container">
+          <ul>
+            <li><a href="https://www.docswell.com/s/meme-dayo/KVMQNL-2026-02-25-123558" target="_blank" rel="noopener noreferrer" class="highlight-card">
+                <img src="img/lab2026.png" alt="" loading="lazy">
+                <div>
+                  <h2>研究室紹介スライド
+                  </h2>
+                  <p>片桐・星野研究室の研究室紹介
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li><a href="https://github.com/Katagiri-Hoshino-Lab/VibeCodeHPC" target="_blank" rel="noopener noreferrer" class="highlight-card">
+                <img src="img/vibecodehpc_screenshot.png" alt="" loading="lazy">
+                <div>
+                  <h2>VibeCodeHPC
+                  </h2>
+                  <p>マルチエージェント自動チューニング
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li><a href="https://github.com/kotama7/ARI" target="_blank" rel="noopener noreferrer" class="highlight-card">
+                <img src="img/ari_logo.png" alt="" loading="lazy">
+                <div>
+                  <h2>ARI
+                  </h2>
+                  <p>自律的科学研究パイプライン
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li><a href="https://www.hpc.itc.nagoya-u.ac.jp/menu/hpc_genie.html" target="_blank" rel="noopener noreferrer" class="highlight-card">
+                <img src="img/hpc_genie.jpg" alt="" loading="lazy">
+                <div>
+                  <h2>HPC-GENIEプロジェクト
+                  </h2>
+                  <p>生成AIによるHPCコード自動生成
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li><a href="https://icts.nagoya-u.ac.jp/ja/center/" target="_blank" rel="noopener noreferrer" class="highlight-card">
+                <img src="img/flow2logo.jpg" alt="" loading="lazy">
+                <div>
+                  <h2>スーパーコンピュータ「不老」
+                  </h2>
+                  <p>2026年10月「不老・弐」稼働
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li><a href="https://zenn.dev/p/katalab" target="_blank" rel="noopener noreferrer" class="highlight-card">
+                <img src="img/blog.png" alt="" loading="lazy">
+                <div>
+                  <h2>研究室ブログ
+                  </h2>
+                  <p>Zenn Publication
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="home-news container" aria-labelledby="latest-news-heading">
+        <div class="section-heading">
+          <h2 id="latest-news-heading">最新情報
+          </h2><a href="news.html">ニュース一覧 →</a>
+        </div>
+        <div class="news-list">
+          <article class="news-card" id="su-nu-ws-2026">
+            <div class="news-meta"><time datetime="2026-07-06">2026.07.06</time><span class="badge badge-workshop">ワークショップ</span>
+            </div>
+            <div class="news-body">
+              <div>
+                <h3><a href="https://www.hpc.itc.nagoya-u.ac.jp/su-nu-ws-2026/" target="_blank" rel="noopener noreferrer">Workshop on LLM-Driven Code Generation and Automation for HPC and Scientific Computing（日仏合同）</a>
+                </h3>
+                <p>LLMを活用したHPCコード生成・科学計算自動化に関する日仏合同ワークショップ。2026年7月6日（月）13:30〜、フランス・パリ ソルボンヌ大学LIP6研究所にて開催。参加無料（要登録）。
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="news-card" id="sakaguchi-ipsj88-award-2026">
+            <div class="news-meta"><time datetime="2026-03-15">2026.03.15</time><span class="badge badge-award">受賞</span>
+            </div>
+            <div class="news-body">
+              <div>
+                <h3>阪口修吾さんが情報処理学会第88回全国大会で学生奨励賞を受賞
+                </h3>
+                <p>阪口修吾, 星野哲也, 河合直聡, 椋木大地, 片桐孝洋, ICTCG法の計算プログラムのGPU移植を対象としたコード生成AIの比較, 情報処理学会 第88回全国大会, 2026年3月.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="news-card" id="best-paper-llm4hpcasia-2026">
+            <div class="news-meta"><time datetime="2026-01-01">2026.01.01</time><span class="badge badge-award">受賞</span>
+            </div>
+            <div class="news-body">
+              <div>
+                <h3>SCA/HPCAsiaWS ’26 LLM4HPCAsia 2026 で Best Paper Award を受賞
+                </h3>
+                <p>Tetsuya Hoshino, Shun-Ichiro Hayashi, Daichi Mukunoki, Takahiro Katagiri and Toshihiro Hanawa による GeoFEM 事例研究論文が Best Paper Award を受賞。
+                </p>
+              </div><a class="news-photo" href="img/best_paper_award_20260129.jpg" target="_blank" rel="noopener"><img src="img/best_paper_award_20260129.jpg" alt="SCA/HPCAsiaWS ’26 LLM4HPCAsia 2026 で Best Paper Award を受賞" loading="lazy"></a>
+            </div>
+          </article>
+          <article class="news-card" id="lab-intro-slide-2026">
+            <div class="news-meta"><time datetime="2026-01-01">2026.01.01</time><span class="badge badge-event">イベント</span>
+            </div>
+            <div class="news-body">
+              <div>
+                <h3><a href="https://www.docswell.com/s/meme-dayo/KVMQNL-2026-02-25-123558" target="_blank" rel="noopener noreferrer">研究室紹介スライド</a>
+                </h3>
+                <p>片桐・星野研究室の研究室紹介スライドです。
+                </p>
+              </div><a class="news-photo" href="img/lab2026.png" target="_blank" rel="noopener"><img src="img/lab2026.png" alt="研究室紹介スライド" loading="lazy"></a>
+            </div>
+          </article>
+          <article class="news-card" id="hayashi-xsig-poster-award-2025">
+            <div class="news-meta"><time datetime="2025-08-01">2025.08.01</time><span class="badge badge-award">受賞</span>
+            </div>
+            <div class="news-body">
+              <div>
+                <h3>林俊一郎さんがxSIG 2025でPoster Awardを受賞
+                </h3>
+                <p>林俊一郎, 椋木大地, 星野哲也, 片桐孝洋, HPC-GENIE: High-Performance Computing with Generative Neural Intelligence for Execution, xSIG 2025, ポスター発表, 2025年8月.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="footer-title">名古屋大学 片桐・星野研究室
+          </p>
+          <p>名古屋大学 情報基盤センター 大規模計算支援環境研究部門<br>〒464-8601 愛知県名古屋市千種区不老町 名古屋大学 情報基盤センター 5階
+          </p>
+        </div>
+        <nav aria-label="サイトマップ">
+          <h2>サイトマップ
+          </h2>
+          <ul class="footer-nav">
+            <li><a href="index.html">トップ</a>
+            </li>
+            <li><a href="about.html">研究室概要</a>
+            </li>
+            <li><a href="research.html">研究紹介</a>
+            </li>
+            <li><a href="publications.html">研究発表</a>
+            </li>
+            <li><a href="projects.html">プロジェクト</a>
+            </li>
+            <li><a href="members.html">メンバー</a>
+            </li>
+            <li><a href="news.html">ニュース</a>
+            </li>
+            <li><a href="access.html">アクセス</a>
+            </li>
+          </ul>
+        </nav>
+        <div>
+          <h2>外部リンク
+          </h2>
+          <ul>
+            <li><a href="https://zenn.dev/p/katalab" target="_blank" rel="noopener noreferrer">研究室ブログ (Zenn)</a>
+            </li>
+            <li><a href="https://github.com/Katagiri-Hoshino-Lab" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </li>
+            <li><a href="https://www.itc.nagoya-u.ac.jp" target="_blank" rel="noopener noreferrer">名古屋大学 情報基盤センター</a>
+            </li>
+            <li><a href="https://www.nagoya-u.ac.jp" target="_blank" rel="noopener noreferrer">名古屋大学</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container copyright">© 2026 Katagiri-Hoshino Lab, Nagoya University.
+      </div>
+    </footer>
   </body>
 </html>
